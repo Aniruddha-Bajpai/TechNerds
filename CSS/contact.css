@@ -1,0 +1,21 @@
+.contact-content {
+  padding: 9px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: block;
+  /* height: 395px; */
+  height: 100vh;
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom left, whitesmoke, skyblue, pink);
+}
+.contact-content img {
+  height: 50rem;
+  width: 100%;
+  opacity: 0.15;
+  /* background-color: transparent; */
+}
+/* .contact-form {
+} */
