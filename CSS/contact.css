@@ -11,8 +11,9 @@
   overflow: hidden;
   background: linear-gradient(to bottom left, whitesmoke, skyblue, pink);
 }
+
 .contact-content img {
-  height: 50rem;
+  height: 50%;
   width: 100%;
   opacity: 0.15;
   /* background-color: transparent; */

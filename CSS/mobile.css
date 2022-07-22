@@ -7,17 +7,22 @@
     flex-direction: column;
     text-align: center;
   }
-
+  /* .nav-right {
+    margin-left: 48px;
+  } */
   .content {
-    /* border-radius: 80%; */
-    /* background: linear-gradient(to bottom right, skyblue, pink, lightgreen); */
-    background: url(../img/blog1.jpg);
+    background-color: aliceblue;
+    border-radius: 100%;
   }
   .content-right {
     display: none;
   }
-  .content-left p {
-    text-align: justify;
+  .content-left q {
+    text-align: center;
+  }
+  .content-left {
+    width: 100%;
+    margin: auto;
   }
   .content::after {
     display: none;
@@ -54,6 +59,9 @@
   }
   .post-img {
     height: auto;
+  }
+  .contact-content {
+    height: 100%;
   }
   .adjust-year {
     position: static;
