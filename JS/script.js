@@ -21,7 +21,7 @@ var typed = new Typed(".t2", {
     "Don't focus on having a great blog. Focus on producing a blog that's great for your readers.",
     "Either write something worth reading or do something worth writing.",
   ],
-  backSpeed: 80,
+
   // backDelay: 5,
   typeSpeed: 80,
   loop: true,

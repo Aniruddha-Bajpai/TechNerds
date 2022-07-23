@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogTypper</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .mainDiv {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: skyblue;
+      }
+      .centerDiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      h1 {
+        text-transform: capitalize;
+        /* text-align:center; */
+        margin-bottom: 30px;
+        color: #ecf0f1;
+        text-shadow: 1px 2px 2px skyblue;
+        font-size: 2.1rem;
+      }
+      h2 {
+        text-align: center;
+      }
+      textarea {
+        background-color: #444;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+        border-radius: 10px 10px 0 0;
+        border: 20px solid #34495e;
+        color: white;
+        font-size: 1.3rem;
+      }
+      .main-btn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 5px solid rgb(46, 96, 115);
+        background: #ecf0f1;
+        font-size: 1rem;
+      }
+      .box {
+        height: auto;
+        width: 250px;
+        padding: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        border-radius: 20px;
+      }
+      .box a {
+        text-decoration: none;
+        font-size: small;
+        padding: 10px 10px;
+
+        color: rgb(46, 96, 115);
+      }
+      #warning {
+        display: none;
+      }
+      @media screen and (max-width: 1200px) {
+        body {
+          background-color: #ecf0f1;
+        }
+        #warning {
+          height: 100vh;
+          display: flex;
+          /* display: flex; */
+          justify-content: center;
+          align-items: center;
+        }
+        #warning h1 {
+          width: auto;
+          color: red;
+        }
+        .centerDiv {
+          display: none;
+        }
+        .mainDiv {
+          display: none;
+        }
+        .typed-cursor {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="warning">
+      <h1 class="typehere"></h1>
+    </div>
+    <div class="mainDiv">
+      <div class="box">
+        <a href="./index.html">
+          <h3>back to home page &rarr;</h3>
+        </a>
+      </div>
+      <div class="centerDiv">
+        <div class="heading">
+          <h1>Welcome To Typing Speed Test</h1>
+          <h2 id="msg"></h2>
+        </div>
+        <br />
+        <textarea
+          name=""
+          id="mywords"
+          cols="100"
+          rows="10"
+          placeholder="Remember, be nice!"
+        ></textarea>
+        <br />
+        <button id="btn" class="main-btn">Start</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      const setOfWords = [
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem accusamus eos aliquam, totam dignissimos dolores nulla! Incidunt, animi labore! Asperiores veniam, labore nobis veritatis nostrum tenetur sint architecto culpa libero quas, voluptatibus aliquam ipsa, aliquid ea iste nam minus. Commodi doloremque illo eos tempore officiis quae, dignissimos adipisci, ipsam perspiciatis facilis explicabo nesciunt quasi quas sequi quia deserunt repellendus corrupti nihil error. Exercitationem modi optio odio unde iusto error vitae dignissimos nam nesciunt repellat accusamus, vero aliquid quo aperiam voluptates distinctio totam, beatae illum provident obcaecati tenetur! Totam iusto sunt dolor? Fugiat soluta distinctio consequuntur laboriosam dolor at id?",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta debitis mollitia qui nihil ratione ex laboriosam harum laborum repellendus illo illum inventore dolore officia dicta, fugiat tenetur, dignissimos nobis autem odit, deserunt quasi. Quis, architecto? Officiis at eaque qui, dolore enim perferendis error ullam molestiae cum odit voluptatem mollitia molestias?",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dignissimos reiciendis, soluta, eaque odio accusamus accusantium modi ab natus labore officia, officiis voluptatem omnis. Aut.",
+      ];
+      const msg = document.getElementById("msg");
+      const typewords = document.getElementById("mywords");
+      const btn = document.getElementById("btn");
+
+      let startTime, endTime;
+      const playGame = () => {
+        let randomNumber = Math.floor(Math.random() * setOfWords.length);
+        // console.log(randomNumber);
+        msg.innerText = setOfWords[randomNumber];
+        let date = new Date();
+        startTime = date.getTime();
+        btn.innerText = "Done";
+      };
+
+      const endPlay = () => {
+        let date = new Date();
+        endTime = date.getTime();
+        let totalTime = (endTime - startTime) / 1000; //in milliseconds
+        // console.log(totalTime);
+        let totalStr = typewords.value;
+        let wordCount = wordCounter(totalStr);
+        let speed = Math.floor((wordCount / totalTime) * 60);
+        let finalmsg = "You typed total at " + speed + " words per minutes ";
+        finalmsg += compareWords(msg.innerText, totalStr);
+        msg.innerText = finalmsg;
+      };
+      const wordCounter = (str) => {
+        let response = str.split(" ").length;
+        return response;
+      };
+      const compareWords = (str1, str2) => {
+        let words1 = str1.split(" ");
+        let words2 = str2.split(" ");
+        let cnt = 0;
+        //ArrayName then foreach
+        words1.forEach(function (item, index) {
+          if (item == words2[index]) {
+            cnt++;
+          }
+        });
+        let errorwords = words1.length - cnt;
+        return (
+          cnt +
+          " correct out of " +
+          words1.length +
+          " words and the total number of error are " +
+          errorwords +
+          "."
+        );
+      };
+      btn.addEventListener("click", function () {
+        // console.log(this);
+        if (this.innerText == "Start") {
+          typewords.disabled = false;
+          playGame();
+        } else if (this.innerText == "Done") {
+          typewords.disabled = true;
+          btn.innerText = "Start";
+          endPlay();
+        }
+      });
+      var typed = new Typed(".typehere", {
+        strings: ["Kindly open this site on a laptop"],
+
+        // backDelay: 5,
+        typeSpeed: 80,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
