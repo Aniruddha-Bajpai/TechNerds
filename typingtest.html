@@ -26,6 +26,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        height: inherit;
         transform: translate(-50%, -50%);
         text-align: center;
       }
@@ -60,6 +61,7 @@
         width: 250px;
         padding: 1%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: aliceblue;
@@ -133,8 +135,8 @@
 
     <script>
       const setOfWords = [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem accusamus eos aliquam, totam dignissimos dolores nulla! Incidunt, animi labore! Asperiores veniam, labore nobis veritatis nostrum tenetur sint architecto culpa libero quas, voluptatibus aliquam ipsa, aliquid ea iste nam minus. Commodi doloremque illo eos tempore officiis quae, dignissimos adipisci, ipsam perspiciatis facilis explicabo nesciunt quasi quas sequi quia deserunt repellendus corrupti nihil error. Exercitationem modi optio odio unde iusto error vitae dignissimos nam nesciunt repellat accusamus, vero aliquid quo aperiam voluptates distinctio totam, beatae illum provident obcaecati tenetur! Totam iusto sunt dolor? Fugiat soluta distinctio consequuntur laboriosam dolor at id?",
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta debitis mollitia qui nihil ratione ex laboriosam harum laborum repellendus illo illum inventore dolore officia dicta, fugiat tenetur, dignissimos nobis autem odit, deserunt quasi. Quis, architecto? Officiis at eaque qui, dolore enim perferendis error ullam molestiae cum odit voluptatem mollitia molestias?",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem accusamus eos aliquam, totam dignissimos dolores nulla! Incidunt, animi labore! Asperiores veniam, labore nobis veritatis nostrum tenetur sint architecto culpa libero quas, voluptatibus aliquam ipsa, aliquid ea iste nam minus. Commodi doloremque illo eos tempore ",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta debitis mollitia qui nihil ratione ex laboriosam harum laborum repellendus illo illum inve",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dignissimos reiciendis, soluta, eaque odio accusamus accusantium modi ab natus labore officia, officiis voluptatem omnis. Aut.",
       ];
       const msg = document.getElementById("msg");
