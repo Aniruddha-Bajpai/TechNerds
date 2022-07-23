@@ -7,6 +7,9 @@
     flex-direction: column;
     text-align: center;
   }
+  .nav-left ul {
+    flex-direction: column;
+  }
   /* .nav-right {
     margin-left: 48px;
   } */
