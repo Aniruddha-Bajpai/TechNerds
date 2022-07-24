@@ -2,6 +2,9 @@
   margin: 0px;
   padding: 0px;
 }
+body {
+  background-color: aliceblue;
+}
 .navigation {
   margin-top: 25px;
   font-family: var(--font2);

@@ -18,5 +18,8 @@
   opacity: 0.15;
   /* background-color: transparent; */
 }
-/* .contact-form {
-} */
+
+.about-us a {
+  text-decoration: none;
+  color: darkgreen;
+}
