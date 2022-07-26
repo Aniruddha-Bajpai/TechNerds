@@ -75,3 +75,8 @@
     width: 100%;
   }
 }
+@media screen and (min-width: 1600px) {
+  .content::after {
+    width: 22vw;
+  }
+}
