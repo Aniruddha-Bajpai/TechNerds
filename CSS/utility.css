@@ -67,3 +67,8 @@ textarea {
 .center {
   text-align: center;
 }
+.scroll
+{
+  overflow: auto;
+  white-space: nowrap;
+}
